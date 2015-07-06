@@ -18,11 +18,17 @@ Plugin 'nathanaelkane/vim-indent-guides' " JS indentation
 Plugin 'Raimondi/delimitMate' " auto spell brackets etc
 Plugin 'scrooloose/nerdtree' "File management   :NERDtree
 Plugin 'scrooloose/syntastic' "syntax check
+  let g:syntastic_cpp_compiler = 'g++'
+  let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+
+
 Plugin 'bling/vim-airline' " A display candy
 " let Vundle manage Vundle, required
 "
 Plugin 'vim-scripts/vim-auto-save' "used for auto-save
 Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-rails'
+Plugin 'toyamarinyon/vim-swift'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -86,8 +92,8 @@ au BufWrite /private/etc/pw.* set nowritebackup
 
 "" ================ Syntax and Color ========================
 syntax on
-" :colorscheme monokai "Color Scheme (default in Sublime)from https://github.com/sickill/vim-monokai
-:colorscheme darkblue
+:colorscheme monokai "Color Scheme (default in Sublime)from https://github.com/sickill/vim-monokai
+" :colorscheme xcodelike
 
 
 "" ================ Tab and Space ========================
@@ -124,4 +130,12 @@ let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 :se hlsearch
 :se ignorecase "ignore case when searching
 :se smartcase " ... unless we type a capital
+
+"" ================ Font ========================
+:se guifont=Menlo\ Regular:h12
+" :se guifont=Monospace:h20
+" ":se guifont=Monaco:h14
+
+
+
 
