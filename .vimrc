@@ -1,4 +1,3 @@
-
 "" ================ Begin of Vundle Config ========================
 
 set nocompatible              " be iMproved, required
@@ -15,7 +14,6 @@ call vundle#begin()
 Plugin 'jelera/vim-javascript-syntax' " JS syntax
 Plugin 'pangloss/vim-javascript' " JS synatx candy
 Plugin 'nathanaelkane/vim-indent-guides' " JS indentation
-Plugin 'Raimondi/delimitMate' " auto spell brackets etc
 Plugin 'scrooloose/nerdtree' "File management   :NERDtree
 Plugin 'scrooloose/syntastic' "syntax check
   let g:syntastic_cpp_compiler = 'g++'
@@ -25,10 +23,10 @@ Plugin 'scrooloose/syntastic' "syntax check
 Plugin 'bling/vim-airline' " A display candy
 " let Vundle manage Vundle, required
 "
-Plugin 'vim-scripts/vim-auto-save' "used for auto-save
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'toyamarinyon/vim-swift'
+Plugin 'BeibinLi/vim-sce-syntax' " Presentation Language
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -92,13 +90,13 @@ au BufWrite /private/etc/pw.* set nowritebackup
 
 "" ================ Syntax and Color ========================
 syntax on
-:colorscheme monokai "Color Scheme (default in Sublime)from https://github.com/sickill/vim-monokai
+:colorscheme desert "Color Scheme (default in Sublime)from https://github.com/sickill/vim-monokai
 " :colorscheme xcodelike
 
 
 "" ================ Tab and Space ========================
 " The following two lines will show tab and newline characters
-:set listchars=tab:▸\ ,eol:¬, 
+:set listchars=tab:~\ ,eol:¬, 
 :set list
 "the following 3 lines are all related to the appearance of TAB as 4 spaces.
 :set tabstop=4 "set the appearance of tab as 4 spaces                       
@@ -109,11 +107,6 @@ syntax on
 
 "" ================ Cursor ========================
 :set cursorline
-
-"" ================ Auto Save ========================
-let g:auto_save = 1  " enable AutoSave on Vim startup. for auto-save plugin
-let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
-let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
 :se ruler
 :se nosplitright " So, we will split on the left
@@ -136,6 +129,5 @@ let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 " :se guifont=Monospace:h20
 " ":se guifont=Monaco:h14
 
-
-
-
+"" ================ Ctrl-J to break one line ========================
+:nnoremap <NL> i<CR><ESC>
